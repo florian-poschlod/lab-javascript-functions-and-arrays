@@ -1,18 +1,95 @@
 // Iteration #1: Find the maximum
 
+function maxOfTwoNumbers(num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+}
+
+
+
 // Iteration #2: Find longest word
+
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+const simpleWords = ['a', 'aaaaaa', 'aa', 'aaaaaaaaaaaaaa', 'aaa', 'aaaa', 'aaaa aaaaa'];
+
+function findLongestWord(wordArray) {
+  if (wordArray.length === 0) {
+    return null;
+  }
+
+  let longestWord = wordArray[0];
+
+  for (let i = 0; i < wordArray.length; i++) {
+    if (wordArray[i].length > longestWord.length) {
+      longestWord = wordArray[i];
+    }
+
+  }
+  return longestWord;
+}
+
+console.log(findLongestWord(words));
+
+
+
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+function sumNumbers(numArray) {
+  let sum = 0;
+  for (let i = 0; i < numArray.length; i++) {
+    sum += numArray[i];
+  }
+  return sum;
+}
+
+console.log(sumNumbers(numbers));
+
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+function averageNumbers(numArray) {
+  let average = sumNumbers(numArray) / numArray.length;
+  if (numArray.length === 0) {
+    return null;
+  }
+  return average;
+}
+
+console.log(averageNumbers(numbersAvg));
+
+
+
+
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength(wordsArray) {
+  let totalLength = 0;
+  let averageLength = 0;
+
+  if (wordsArray.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < wordsArray.length; i++) {
+    totalLength += wordsArray[i].length;
+  }
+  averageLength = totalLength / wordsArray.length;
+  return averageLength;
+}
+
+console.log(averageWordLength(wordsArr));
+
+
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -28,6 +105,14 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+
+// console.log(wordsUnique.indexOf('poison', 3));
+// let word = wordsUnique[0];
+// if (wordsUnique.indexOf(word, i) === -1) {
+//   console.log('true');
+// }
+
+
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
