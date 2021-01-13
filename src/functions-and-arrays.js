@@ -106,16 +106,49 @@ const wordsUnique = [
   'bring'
 ];
 
-// console.log(wordsUnique.indexOf('poison', 3));
-// let word = wordsUnique[0];
-// if (wordsUnique.indexOf(word, i) === -1) {
-//   console.log('true');
-// }
+function uniquifyArray(wordArray) {
+  let uniqueArray = [];
+  let word = '';
+  
+  if (wordArray.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < wordArray.length; i++) {
+    word = wordArray[i];
+    if (wordArray.indexOf(word) === wordArray.lastIndexOf(word)) {
+      uniqueArray.push(word);
+    } 
+  }
+  return uniqueArray;
+}
+
+console.log(uniquifyArray(wordsUnique));
+
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function doesWordExist(wordArray, searchWord) {
+  if (wordArray.length === 0) {
+    return null;
+  }
+
+  for (let i = 0; i < wordArray.length; i++) {
+    if (searchWord === wordArray[i]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+console.log(doesWordExist(wordsFind, 'subset'));
+
+
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -131,6 +164,14 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+// function howManyTimes(wordArray, searchWord) {
+
+// }
+
+
+
+
 
 // Iteration #8: Bonus
 
